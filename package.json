@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "mocha Provider.js"
+  },
+  "name": "PactumJS",
+  "version": "1.0.0",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "pactum": "^3.5.1",
+    "pactum-flow-plugin": "^0.1.4"
+  }
+}
