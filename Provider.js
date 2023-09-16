@@ -1,6 +1,5 @@
-const {spec, mock, flow, reporter} = require('pactum');
+const {mock, flow, reporter} = require('pactum');
 const pf = require('pactum-flow-plugin');
-
 function addFlowReporter(){
     pf.config.url = 'http://localhost:8080';
     pf.config.projectId = 'team2_book-service';
@@ -10,7 +9,6 @@ function addFlowReporter(){
     pf.config.password = 'scanner';
     reporter.add(pf.reporter);
 }
-
 mock.addInteraction({
     request: {
         method: 'GET',
@@ -31,7 +29,6 @@ after(async () => {
     await mock.stop;
     await reporter.end();
 });
-
 it('Reveive a Book', async () => {
     await flow('get a book in stock')
         .get('http://0.0.0.0:4000/books/1')
